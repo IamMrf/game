@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="gameCanvas" class="game-canvas">
+    <div id="green" class="green"></div>
+    <div id="scoreBoard" class="score-board">Score: 0</div>
+    <button id="pauseBtn" class="pause-btn">Pause</button>
+    <div id="gameOverPopup" class="game-over-popup">
+      <div class="game-over-text">Game Over</div>
+      <div id="finalScore" class="final-score">Final Score: 0</div>
+      <button class="restart-btn">Restart</button>
+    </div>
+    <audio id="bgMusic" loop>
+      <source src="https://github.com/IamMrf/game/raw/refs/heads/main/assets/bgm.mp3" type="audio/mp3">
+      Your browser does not support the audio tag.
+    </audio>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
