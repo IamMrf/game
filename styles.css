@@ -1,0 +1,131 @@
+/* Set the entire page background to white */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white; /* White background for the entire page */
+}
+
+/* The game canvas itself is still contained within the white background */
+.game-canvas {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f4f4f4; /* Light grey background for game canvas */
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Green character */
+.green {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('https://raw.githubusercontent.com/IamMrf/game/refs/heads/main/assets/green.svg');
+  background-size: cover;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Red enemy */
+.red {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url('https://raw.githubusercontent.com/IamMrf/game/refs/heads/main/assets/red.svg');
+  background-size: cover;
+  border-radius: 50%;
+  animation: moveRed 5s linear infinite;
+}
+
+@keyframes moveRed {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+/* Scoreboard */
+.score-board {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: black; /* Black text for readability */
+}
+
+/* Pause button */
+.pause-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pause-btn:hover {
+  background-color: #444;
+}
+
+/* Game Over Popup */
+.game-over-popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.game-over-text {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.final-score {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.restart-btn {
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  background-color: darkgreen;
+}
+
+/* Explosion effect */
+@keyframes explodeEffect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.red.explode {
+  animation: explodeEffect 0.5s ease-out forwards;
+}
